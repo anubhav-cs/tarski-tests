@@ -160,8 +160,8 @@ def _enumerate_instantiations(variables) :
 
 if __name__ == "__main__" :
     reader = FstripsReader(raise_on_error=True, theories=None)
-    problem = reader.read_problem("domain_mod.pddl","p15.pddl")
-    #eliminate_universal_effects_quantifiers(problem)
+    problem = reader.read_problem("domain.pddl","p15.pddl")
+    eliminate_universal_effects_quantifiers(problem)
     #print(problem.actions['make-product'])
     grounding = LPGroundingStrategy(problem)
     actions = grounding.ground_actions()
