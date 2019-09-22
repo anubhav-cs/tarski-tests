@@ -14,7 +14,7 @@ from tarski.reachability import create_reachability_lp
 
 from tarski.io import FstripsReader
 from tarski.grounding import LPGroundingStrategy, NaiveGroundingStrategy
-from tarski.syntax.transform import UniversalQuantifierElimination
+from tarski.syntax.transform.quantifier_elimination import QuantifierElimination, QuantifierElimination
 from tarski.syntax.formulas import QuantifiedFormula, CompoundFormula
 from tarski.syntax.formulas import Quantifier, land
 from tarski.syntax.transform.subst import create_substitution
@@ -52,8 +52,8 @@ def process_formula(formula, lang) :
         return formula
     elif isinstance(formula, QuantifiedFormula) :
         #print("QE ",formula)
-        return UniversalQuantifierElimination.rewrite(lang,
-                formula).universal_free
+        return (QuantifierElimination.rewrite( lang, formula, 
+            QuantifierEliminationMode.All)).result
     else :
         return formula
 
@@ -160,9 +160,11 @@ def _enumerate_instantiations(variables) :
 
 if __name__ == "__main__" :
     reader = FstripsReader(raise_on_error=True, theories=None)
-    problem = reader.read_problem("domain.pddl","p15.pddl")
+    problem = reader.read_problem("scanalyzer_domain.pddl","scanalyzer_p01.pddl")
+    #problem = reader.read_problem("organic-synthesis-split-ipc18_domain.pddl","organic-synthesis-split-ipc18_p01.pddl")
     eliminate_universal_effects_quantifiers(problem)
-    print(problem.actions['make-product'])
     grounding = LPGroundingStrategy(problem)
     actions = grounding.ground_actions()
+    actions = grounding.ground_state_variables()
+    print(actions)
     print("Tests passed")
