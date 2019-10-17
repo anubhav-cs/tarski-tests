@@ -170,8 +170,8 @@ if __name__ == "__main__" :
                 new_effects.append(effect)
         action.effects = new_effects
     """
-    problem = reader.read_problem("floortile_domain.pddl","floortile_p01-4-3-2.pddl")
-    #problem = reader.read_problem("tidybot_domain.pddl","tidybot_p02.pddl")
+    #problem = reader.read_problem("floortile_domain.pddl","floortile_p01-4-3-2.pddl")
+    problem = reader.read_problem("tidybot_domain.pddl","tidybot_p02.pddl")
     grounding = LPGroundingStrategy(problem)
     actions = grounding.ground_actions()
     actions = grounding.ground_state_variables()
