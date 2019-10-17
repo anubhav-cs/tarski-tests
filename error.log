@@ -1,12 +1,26 @@
 Traceback (most recent call last):
-  File "test.py", line 167, in <module>
-    actions = grounding.ground_actions()
-  File "/home/xoxo/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 39, in ground_actions
-    model = self._solve_lp()
-  File "/home/xoxo/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 49, in _solve_lp
-    lp, tr = create_reachability_lp(self.problem)
-  File "/home/xoxo/Applications/tarski/src/tarski/reachability/asp.py", line 21, in create_reachability_lp
-    compiler.create()
-  File "/home/xoxo/Applications/tarski/src/tarski/reachability/asp.py", line 54, in create
-    assert isinstance(atom, Atom)
-AssertionError
+  File "test.py", line 163, in <module>
+    problem = reader.read_problem("domain.pddl","p02.pddl")
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/io/fstrips.py", line 31, in read_problem
+    self.parse_instance(instance)
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/io/fstrips.py", line 43, in parse_instance
+    self.parse_file(filename, 'problem')
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/io/fstrips.py", line 37, in parse_file
+    self.parser.visit(domain_parse_tree)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/tree/Tree.py", line 34, in visit
+    return tree.accept(self)
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 4883, in accept
+    return visitor.visitProblem(self)
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/io/_fstrips/parser/visitor.py", line 379, in visitProblem
+    return self.visitChildren(ctx)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/tree/Tree.py", line 44, in visitChildren
+    childResult = c.accept(self)
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 5143, in accept
+    return visitor.visitObject_declaration(self)
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 167, in visitObject_declaration
+    self.language.constant(o, t)
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/fol.py", line 210, in constant
+    self._check_name_not_defined(name, self._constants, err.DuplicateConstantDefinition)
+  File "/media/xoxo/SSD256/Applications/tarski/src/tarski/fol.py", line 245, in _check_name_not_defined
+    raise err.DuplicateDefinition(name, self._global_index[name])
+tarski.errors.DuplicateDefinition: Duplicate definition of element "cart": "Sort(cart)"

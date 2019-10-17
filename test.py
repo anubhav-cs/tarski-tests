@@ -7,7 +7,7 @@ Anu-References:-
 import os
 import itertools
 import shutil
-
+import tarski
 
 from tarski.reachability.asp import *
 from tarski.reachability import create_reachability_lp
@@ -17,7 +17,7 @@ from tarski.grounding import LPGroundingStrategy, NaiveGroundingStrategy
 from tarski.syntax.transform.quantifier_elimination import QuantifierElimination, QuantifierElimination
 from tarski.syntax.formulas import QuantifiedFormula, CompoundFormula
 from tarski.syntax.formulas import Quantifier, land
-from tarski.syntax.transform.subst import create_substitution
+from tarski.syntax.transform.substitutions import create_substitution
 from tarski.syntax.transform import term_substitution, PrenexTransformation
 from tarski.fstrips import UniversalEffect, AddEffect, DelEffect
 
@@ -160,9 +160,10 @@ def _enumerate_instantiations(variables) :
 
 if __name__ == "__main__" :
     reader = FstripsReader(raise_on_error=True, theories=None)
-    problem = reader.read_problem("scanalyzer_domain.pddl","scanalyzer_p01.pddl")
+    problem = reader.read_problem("domain.pddl","p02.pddl")
+    #problem = reader.read_problem("scanalyzer_domain.pddl","scanalyzer_p01.pddl")
     #problem = reader.read_problem("organic-synthesis-split-ipc18_domain.pddl","organic-synthesis-split-ipc18_p01.pddl")
-    eliminate_universal_effects_quantifiers(problem)
+    #eliminate_universal_effects_quantifiers(problem)
     grounding = LPGroundingStrategy(problem)
     actions = grounding.ground_actions()
     actions = grounding.ground_state_variables()
