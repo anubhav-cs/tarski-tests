@@ -19,7 +19,7 @@ from tarski.syntax.formulas import QuantifiedFormula, CompoundFormula
 from tarski.syntax.formulas import Quantifier, land
 from tarski.syntax.transform.substitutions import create_substitution
 from tarski.syntax.transform import term_substitution, PrenexTransformation
-from tarski.fstrips import UniversalEffect, AddEffect, DelEffect
+from tarski.fstrips import UniversalEffect, AddEffect, DelEffect, FunctionalEffect
 
 if shutil.which("gringo") is None :
     import pytest
@@ -160,10 +160,18 @@ def _enumerate_instantiations(variables) :
 
 if __name__ == "__main__" :
     reader = FstripsReader(raise_on_error=True, theories=None)
-    problem = reader.read_problem("domain.pddl","p02.pddl")
-    #problem = reader.read_problem("scanalyzer_domain.pddl","scanalyzer_p01.pddl")
-    #problem = reader.read_problem("organic-synthesis-split-ipc18_domain.pddl","organic-synthesis-split-ipc18_p01.pddl")
-    #eliminate_universal_effects_quantifiers(problem)
+    """
+    problem = reader.read_problem("parcprinter_p01-domain.pddl","parcprinter_p01.pddl")
+    problem.init.function_extensions = dict()
+    for _,action in problem.actions.items():
+        new_effects = []
+        for effect in action.effects:
+            if not isinstance(effect, FunctionalEffect):
+                new_effects.append(effect)
+        action.effects = new_effects
+    """
+    problem = reader.read_problem("floortile_domain.pddl","floortile_p01-4-3-2.pddl")
+    #problem = reader.read_problem("tidybot_domain.pddl","tidybot_p02.pddl")
     grounding = LPGroundingStrategy(problem)
     actions = grounding.ground_actions()
     actions = grounding.ground_state_variables()
