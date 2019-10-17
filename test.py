@@ -160,6 +160,7 @@ def _enumerate_instantiations(variables) :
 
 if __name__ == "__main__" :
     reader = FstripsReader(raise_on_error=True, theories=None)
+    ### Uncomment this for PARCPRINTER test
     """
     problem = reader.read_problem("parcprinter_p01-domain.pddl","parcprinter_p01.pddl")
     problem.init.function_extensions = dict()
@@ -170,8 +171,12 @@ if __name__ == "__main__" :
                 new_effects.append(effect)
         action.effects = new_effects
     """
+    ### Uncomment this for FLOORTILE TEST
     #problem = reader.read_problem("floortile_domain.pddl","floortile_p01-4-3-2.pddl")
+
+    # Comment this
     problem = reader.read_problem("tidybot_domain.pddl","tidybot_p02.pddl")
+
     grounding = LPGroundingStrategy(problem)
     actions = grounding.ground_actions()
     actions = grounding.ground_state_variables()
