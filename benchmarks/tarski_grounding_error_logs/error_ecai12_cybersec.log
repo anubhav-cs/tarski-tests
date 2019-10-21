@@ -1,0 +1,76 @@
+***Started - reading and parsing pddl file ...***
+***Finished reading and parsing pddl file after 585.617 seconds CPU time, 584.725 seconds wall-clock time***
+
+***Started - preprocessing tarski problem ...***
+***Finished preprocessing tarski problem after 0.896 seconds CPU time, 0.895 seconds wall-clock time***
+
+***Started - grounding ...***
+/tmp/tmpkv6pydi8:105:70-71: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:106:97-98: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:108:97-98: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:110:97-98: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:112:97-98: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:114:151-152: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:116:151-152: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:118:151-152: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:120:151-152: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:122:153-154: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:124:153-154: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:126:153-154: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:128:153-154: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:130:147-148: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:132:147-148: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:134:147-148: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:136:147-148: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:138:150-151: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:140:150-151: error: syntax error, unexpected (
+
+/tmp/tmpkv6pydi8:142:150-151: error: syntax error, unexpected (
+
+*** ERROR: (gringo): too many messages.
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.7/cProfile.py", line 173, in <module>
+    main()
+  File "/usr/lib/python3.7/cProfile.py", line 166, in main
+    runctx(code, globs, None, options.outfile, options.sort)
+  File "/usr/lib/python3.7/cProfile.py", line 20, in runctx
+    filename, sort)
+  File "/usr/lib/python3.7/profile.py", line 62, in runctx
+    prof.runctx(statement, globals, locals)
+  File "/usr/lib/python3.7/cProfile.py", line 100, in runctx
+    exec(cmd, globals, locals)
+  File "brfs.py", line 60, in <module>
+    main( sys.argv[1], sys.argv[2], sys.argv[3] )
+  File "brfs.py", line 15, in main
+    ground_generate_task( domain_file, problem_file, task )
+  File "/home/anubhav-cs/Documents/Research_Project/anubhav-research/LAPKT-public/planners/brfs-tarski/tarski_parser/tarski_util.py", line 185, in ground_generate_task
+    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 39, in ground_actions
+    model = self._solve_lp()
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 50, in _solve_lp
+    model_filename = run_clingo(lp)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/reachability/clingo_wrapper.py", line 26, in run_clingo
+    raise ExternalCommandError("Gringo exited with code {}".format(retcode))
+tarski.errors.ExternalCommandError: Gringo exited with code 1

@@ -1,0 +1,31 @@
+***Started - reading and parsing pddl file ...***
+Traceback (most recent call last):
+  File "brfs.py", line 60, in <module>
+    main( sys.argv[1], sys.argv[2], sys.argv[3] )
+  File "brfs.py", line 15, in main
+    ground_generate_task( domain_file, problem_file, task )
+  File "/home/anubhav-cs/Documents/Research_Project/anubhav-research/LAPKT-public/planners/brfs-tarski/tarski_parser/tarski_util.py", line 171, in ground_generate_task
+    theories=None).read_problem( domain_file, problem_file)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/io/fstrips.py", line 31, in read_problem
+    self.parse_instance(instance)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/io/fstrips.py", line 43, in parse_instance
+    self.parse_file(filename, 'problem')
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/io/fstrips.py", line 37, in parse_file
+    self.parser.visit(domain_parse_tree)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/tree/Tree.py", line 34, in visit
+    return tree.accept(self)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 4883, in accept
+    return visitor.visitProblem(self)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/io/_fstrips/parser/visitor.py", line 379, in visitProblem
+    return self.visitChildren(ctx)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/tree/Tree.py", line 44, in visitChildren
+    childResult = c.accept(self)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 5143, in accept
+    return visitor.visitObject_declaration(self)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 167, in visitObject_declaration
+    self.language.constant(o, t)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/fol.py", line 210, in constant
+    self._check_name_not_defined(name, self._constants, err.DuplicateConstantDefinition)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/fol.py", line 245, in _check_name_not_defined
+    raise err.DuplicateDefinition(name, self._global_index[name])
+tarski.errors.DuplicateDefinition: Duplicate definition of element "cart": "Sort(cart)"

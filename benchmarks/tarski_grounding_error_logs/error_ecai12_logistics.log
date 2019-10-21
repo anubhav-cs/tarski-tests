@@ -1,0 +1,36 @@
+***Started - reading and parsing pddl file ...***
+***Finished reading and parsing pddl file after 0.136 seconds CPU time, 0.134 seconds wall-clock time***
+
+***Started - preprocessing tarski problem ...***
+***Finished preprocessing tarski problem after 0.000 seconds CPU time, 0.000 seconds wall-clock time***
+
+***Started - grounding ...***
+/tmp/tmpgjixmyye:38:12-13: error: syntax error, unexpected (
+
+/tmp/tmpgjixmyye:39:30-31: error: syntax error, unexpected (
+
+/tmp/tmpgjixmyye:41:36-37: error: syntax error, unexpected (
+
+/tmp/tmpgjixmyye:43:30-31: error: syntax error, unexpected (
+
+/tmp/tmpgjixmyye:45:33-34: error: syntax error, unexpected (
+
+/tmp/tmpgjixmyye:47:34-35: error: syntax error, unexpected (
+
+/tmp/tmpgjixmyye:49:38-39: error: syntax error, unexpected (
+
+*** ERROR: (gringo): grounding stopped because of errors
+Traceback (most recent call last):
+  File "brfs.py", line 60, in <module>
+    main( sys.argv[1], sys.argv[2], sys.argv[3] )
+  File "brfs.py", line 15, in main
+    ground_generate_task( domain_file, problem_file, task )
+  File "/home/anubhav-cs/Documents/Research_Project/anubhav-research/LAPKT-public/planners/brfs-tarski/tarski_parser/tarski_util.py", line 185, in ground_generate_task
+    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 39, in ground_actions
+    model = self._solve_lp()
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 50, in _solve_lp
+    model_filename = run_clingo(lp)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/reachability/clingo_wrapper.py", line 26, in run_clingo
+    raise ExternalCommandError("Gringo exited with code {}".format(retcode))
+tarski.errors.ExternalCommandError: Gringo exited with code 1

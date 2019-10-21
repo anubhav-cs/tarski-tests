@@ -1,0 +1,62 @@
+***Started - reading and parsing pddl file ...***
+***Finished reading and parsing pddl file after 0.279 seconds CPU time, 0.274 seconds wall-clock time***
+
+***Started - preprocessing tarski problem ...***
+***Finished preprocessing tarski problem after 0.001 seconds CPU time, 0.001 seconds wall-clock time***
+
+***Started - grounding ...***
+/tmp/tmptaoo7c58:135:21-22: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:136:73-74: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:137:48-49: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:139:80-81: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:140:60-61: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:142:95-96: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:143:65-66: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:145:88-89: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:146:67-68: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:148:97-98: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:149:62-63: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:150:63-64: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:152:101-102: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:153:66-67: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:154:67-68: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:156:81-82: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:157:50-51: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:158:58-59: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:160:85-86: error: syntax error, unexpected (
+
+/tmp/tmptaoo7c58:161:50-51: error: syntax error, unexpected (
+
+*** ERROR: (gringo): too many messages.
+Traceback (most recent call last):
+  File "brfs.py", line 60, in <module>
+    main( sys.argv[1], sys.argv[2], sys.argv[3] )
+  File "brfs.py", line 15, in main
+    ground_generate_task( domain_file, problem_file, task )
+  File "/home/anubhav-cs/Documents/Research_Project/anubhav-research/LAPKT-public/planners/brfs-tarski/tarski_parser/tarski_util.py", line 185, in ground_generate_task
+    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 39, in ground_actions
+    model = self._solve_lp()
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 50, in _solve_lp
+    model_filename = run_clingo(lp)
+  File "/media/anubhav-cs/SSD256/Applications/tarski/src/tarski/reachability/clingo_wrapper.py", line 26, in run_clingo
+    raise ExternalCommandError("Gringo exited with code {}".format(retcode))
+tarski.errors.ExternalCommandError: Gringo exited with code 1
