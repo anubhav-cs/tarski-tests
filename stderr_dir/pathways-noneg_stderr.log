@@ -1,0 +1,6 @@
+/tmp/tmpd_rkbzuy:32:19-30: info: atom does not occur in any rule head:
+  molecule(X)
+
+/tmp/tmpd_rkbzuy:92:68-100: info: atom does not occur in any rule head:
+  atom_synthesis__reaction(X1,X2)
+

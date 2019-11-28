@@ -1,0 +1,15 @@
+/tmp/tmpaeak58ka:91:19-27: info: atom does not occur in any rule head:
+  value(X)
+
+/tmp/tmpaeak58ka:93:18-32: info: atom does not occur in any rule head:
+  object_type(X)
+
+/tmp/tmpaeak58ka:98:24-45: info: atom does not occur in any rule head:
+  observedconnection(X)
+
+/tmp/tmpaeak58ka:101:24-50: info: atom does not occur in any rule head:
+  observedlocalcredential(X)
+
+/tmp/tmpaeak58ka:107:24-44: info: atom does not occur in any rule head:
+  observedlocaluser(X)
+

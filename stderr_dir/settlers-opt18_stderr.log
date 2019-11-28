@@ -1,0 +1,12 @@
+/tmp/tmpysyokbb0:95:19-27: info: atom does not occur in any rule head:
+  store(X)
+
+/tmp/tmpysyokbb0:102:19-30: info: atom does not occur in any rule head:
+  resource(X)
+
+/tmp/tmpysyokbb0:5499:100-131: info: atom does not occur in any rule head:
+  atom_connected__by__sea(P1,P2)
+
+/tmp/tmpysyokbb0:6234:42-59: info: atom does not occur in any rule head:
+  atom_by__coast(P)
+

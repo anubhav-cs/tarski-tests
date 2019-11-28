@@ -1,0 +1,60 @@
+/tmp/tmpsa4hae8r:26:19-35: info: atom does not occur in any rule head:
+  chemical_atom(X)
+
+/tmp/tmpsa4hae8r:27:26-39: info: atom does not occur in any rule head:
+  phosphorus(X)
+
+/tmp/tmpsa4hae8r:28:26-36: info: atom does not occur in any rule head:
+  calcium(X)
+
+/tmp/tmpsa4hae8r:29:26-35: info: atom does not occur in any rule head:
+  sulfur(X)
+
+/tmp/tmpsa4hae8r:30:26-38: info: atom does not occur in any rule head:
+  magnesium(X)
+
+/tmp/tmpsa4hae8r:31:26-38: info: atom does not occur in any rule head:
+  aluminium(X)
+
+/tmp/tmpsa4hae8r:32:26-37: info: atom does not occur in any rule head:
+  chromium(X)
+
+/tmp/tmpsa4hae8r:33:26-33: info: atom does not occur in any rule head:
+  iron(X)
+
+/tmp/tmpsa4hae8r:34:26-38: info: atom does not occur in any rule head:
+  manganese(X)
+
+/tmp/tmpsa4hae8r:35:26-36: info: atom does not occur in any rule head:
+  mercury(X)
+
+/tmp/tmpsa4hae8r:36:26-34: info: atom does not occur in any rule head:
+  boron(X)
+
+/tmp/tmpsa4hae8r:37:26-35: info: atom does not occur in any rule head:
+  copper(X)
+
+/tmp/tmpsa4hae8r:38:26-38: info: atom does not occur in any rule head:
+  palladium(X)
+
+/tmp/tmpsa4hae8r:39:26-36: info: atom does not occur in any rule head:
+  r_group(X)
+
+/tmp/tmpsa4hae8r:40:20-30: info: atom does not occur in any rule head:
+  halogen(X)
+
+/tmp/tmpsa4hae8r:41:20-34: info: atom does not occur in any rule head:
+  alkalimetal(X)
+
+/tmp/tmpsa4hae8r:42:20-27: info: atom does not occur in any rule head:
+  hcno(X)
+
+/tmp/tmpsa4hae8r:43:17-22: info: atom does not occur in any rule head:
+  hc(X)
+
+/tmp/tmpsa4hae8r:44:17-28: info: atom does not occur in any rule head:
+  nitrogen(X)
+
+/tmp/tmpsa4hae8r:48:20-31: info: atom does not occur in any rule head:
+  chlorine(X)
+

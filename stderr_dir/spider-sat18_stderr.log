@@ -1,0 +1,14 @@
+/tmp/tmp3xx3ubsn:39:25-43: info: atom does not occur in any rule head:
+  card_or_tableau(X)
+
+ERROR:root:message
+Traceback (most recent call last):
+  File "tarski_test.py", line 17, in main
+    status = ground_generate_task( domain_file, problem_file, None)
+  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 106, in ground_generate_task
+    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 39, in ground_actions
+    model = self._solve_lp()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 54, in _solve_lp
+    raise ReachabilityLPUnsolvable()
+tarski.grounding.errors.ReachabilityLPUnsolvable: The relaxed-reachabilty logic program is not solvable

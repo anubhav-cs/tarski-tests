@@ -1,0 +1,6 @@
+/tmp/tmp8gitubp4:14:19-28: info: atom does not occur in any rule head:
+  target(X)
+
+/tmp/tmp8gitubp4:15:19-31: info: atom does not occur in any rule head:
+  locatable(X)
+

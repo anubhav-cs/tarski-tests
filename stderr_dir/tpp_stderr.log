@@ -1,0 +1,6 @@
+/tmp/tmpu3epu9n1:7:19-27: info: atom does not occur in any rule head:
+  place(X)
+
+/tmp/tmpu3epu9n1:8:19-31: info: atom does not occur in any rule head:
+  locatable(X)
+

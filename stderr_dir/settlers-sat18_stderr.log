@@ -1,0 +1,6 @@
+/tmp/tmpy8veaz3i:140:19-27: info: atom does not occur in any rule head:
+  store(X)
+
+/tmp/tmpy8veaz3i:147:19-30: info: atom does not occur in any rule head:
+  resource(X)
+

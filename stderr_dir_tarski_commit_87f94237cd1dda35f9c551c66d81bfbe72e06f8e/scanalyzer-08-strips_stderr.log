@@ -1,0 +1,6 @@
+/tmp/tmpaowai6ig:43:135-175: info: atom does not occur in any rule head:
+  cycle__4__with__analysis(S1,S2,S3,S4)
+
+/tmp/tmpaowai6ig:52:134-158: info: atom does not occur in any rule head:
+  cycle__4(S1,S2,S3,S4)
+

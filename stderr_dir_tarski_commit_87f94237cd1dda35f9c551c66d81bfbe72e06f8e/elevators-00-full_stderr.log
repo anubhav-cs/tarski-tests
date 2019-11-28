@@ -1,0 +1,25 @@
+ERROR:root:message
+Traceback (most recent call last):
+  File "tarski_test.py", line 17, in main
+    status = ground_generate_task( domain_file, problem_file, None)
+  File "/home/anubhav-cs/Github/width-based-algos-LAPKT/tarski-test_suite/tarski_util.py", line 101, in ground_generate_task
+    process_problem( problem)
+  File "/home/anubhav-cs/Github/width-based-algos-LAPKT/tarski-test_suite/tarski_util.py", line 158, in process_problem
+    problem.language)
+  File "/home/anubhav-cs/Github/width-based-algos-LAPKT/tarski-test_suite/tarski_util.py", line 243, in process_formula
+    sub_f.append( process_formula( f, lang))
+  File "/home/anubhav-cs/Github/width-based-algos-LAPKT/tarski-test_suite/tarski_util.py", line 243, in process_formula
+    sub_f.append( process_formula( f, lang))
+  File "/home/anubhav-cs/Github/width-based-algos-LAPKT/tarski-test_suite/tarski_util.py", line 243, in process_formula
+    sub_f.append( process_formula( f, lang))
+  File "/home/anubhav-cs/Github/width-based-algos-LAPKT/tarski-test_suite/tarski_util.py", line 250, in process_formula
+    QuantifierEliminationMode.All)).result, lang)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/syntax/transform/quantifier_elimination.py", line 79, in rewrite
+    trans.convert()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/syntax/transform/quantifier_elimination.py", line 73, in convert
+    self.result = self._convert(self.blueprint)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/syntax/transform/quantifier_elimination.py", line 53, in _convert
+    return self._convert(self._expand(phi, lor)) if self._eliminate_exists() else self._recurse(phi)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/syntax/transform/quantifier_elimination.py", line 65, in _expand
+    raise TransformationError("quantifier elimination", phi, "No constants were defined!")
+tarski.syntax.transform.errors.TransformationError: Error applying transformation "quantifier elimination" to formula "exists ?p/conflict_a : (((not (served(?p/conflict_a)) and origin(?p/conflict_a,?f/floor)) or (boarded(?p/conflict_a) and not (destin(?p/conflict_a,?f/floor)))))": No constants were defined!

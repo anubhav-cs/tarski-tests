@@ -1,0 +1,60 @@
+/tmp/tmpbfuzn2_4:27:21-34: info: atom does not occur in any rule head:
+  phosphorus(X)
+
+/tmp/tmpbfuzn2_4:28:21-31: info: atom does not occur in any rule head:
+  calcium(X)
+
+/tmp/tmpbfuzn2_4:29:21-30: info: atom does not occur in any rule head:
+  sulfur(X)
+
+/tmp/tmpbfuzn2_4:30:21-33: info: atom does not occur in any rule head:
+  magnesium(X)
+
+/tmp/tmpbfuzn2_4:31:21-33: info: atom does not occur in any rule head:
+  aluminium(X)
+
+/tmp/tmpbfuzn2_4:32:21-32: info: atom does not occur in any rule head:
+  chromium(X)
+
+/tmp/tmpbfuzn2_4:33:21-28: info: atom does not occur in any rule head:
+  iron(X)
+
+/tmp/tmpbfuzn2_4:34:21-33: info: atom does not occur in any rule head:
+  manganese(X)
+
+/tmp/tmpbfuzn2_4:35:21-31: info: atom does not occur in any rule head:
+  mercury(X)
+
+/tmp/tmpbfuzn2_4:36:21-29: info: atom does not occur in any rule head:
+  boron(X)
+
+/tmp/tmpbfuzn2_4:37:21-30: info: atom does not occur in any rule head:
+  copper(X)
+
+/tmp/tmpbfuzn2_4:38:21-33: info: atom does not occur in any rule head:
+  palladium(X)
+
+/tmp/tmpbfuzn2_4:44:12-23: info: atom does not occur in any rule head:
+  nitrogen(X)
+
+/tmp/tmpbfuzn2_4:48:15-26: info: atom does not occur in any rule head:
+  chlorine(X)
+
+/tmp/tmpbfuzn2_4:49:15-26: info: atom does not occur in any rule head:
+  fluorine(X)
+
+/tmp/tmpbfuzn2_4:50:15-25: info: atom does not occur in any rule head:
+  bromine(X)
+
+/tmp/tmpbfuzn2_4:51:15-24: info: atom does not occur in any rule head:
+  iodine(X)
+
+/tmp/tmpbfuzn2_4:52:15-26: info: atom does not occur in any rule head:
+  astatine(X)
+
+/tmp/tmpbfuzn2_4:53:19-29: info: atom does not occur in any rule head:
+  lithium(X)
+
+/tmp/tmpbfuzn2_4:54:19-28: info: atom does not occur in any rule head:
+  sodium(X)
+

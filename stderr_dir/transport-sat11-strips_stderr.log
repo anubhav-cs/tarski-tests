@@ -1,0 +1,6 @@
+/tmp/tmp_rw8vc3w:67:19-28: info: atom does not occur in any rule head:
+  target(X)
+
+/tmp/tmp_rw8vc3w:68:19-31: info: atom does not occur in any rule head:
+  locatable(X)
+

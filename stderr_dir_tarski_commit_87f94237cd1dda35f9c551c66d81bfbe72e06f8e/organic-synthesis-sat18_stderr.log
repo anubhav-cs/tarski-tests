@@ -1,0 +1,60 @@
+/tmp/tmp6wqkxtq2:26:21-31: info: atom does not occur in any rule head:
+  calcium(X)
+
+/tmp/tmp6wqkxtq2:27:21-30: info: atom does not occur in any rule head:
+  sulfur(X)
+
+/tmp/tmp6wqkxtq2:28:21-33: info: atom does not occur in any rule head:
+  magnesium(X)
+
+/tmp/tmp6wqkxtq2:29:21-33: info: atom does not occur in any rule head:
+  aluminium(X)
+
+/tmp/tmp6wqkxtq2:30:21-32: info: atom does not occur in any rule head:
+  chromium(X)
+
+/tmp/tmp6wqkxtq2:31:21-28: info: atom does not occur in any rule head:
+  iron(X)
+
+/tmp/tmp6wqkxtq2:32:21-33: info: atom does not occur in any rule head:
+  manganese(X)
+
+/tmp/tmp6wqkxtq2:33:21-31: info: atom does not occur in any rule head:
+  mercury(X)
+
+/tmp/tmp6wqkxtq2:34:21-29: info: atom does not occur in any rule head:
+  boron(X)
+
+/tmp/tmp6wqkxtq2:35:21-30: info: atom does not occur in any rule head:
+  copper(X)
+
+/tmp/tmp6wqkxtq2:36:21-33: info: atom does not occur in any rule head:
+  palladium(X)
+
+/tmp/tmp6wqkxtq2:47:15-26: info: atom does not occur in any rule head:
+  fluorine(X)
+
+/tmp/tmp6wqkxtq2:48:15-25: info: atom does not occur in any rule head:
+  bromine(X)
+
+/tmp/tmp6wqkxtq2:49:15-24: info: atom does not occur in any rule head:
+  iodine(X)
+
+/tmp/tmp6wqkxtq2:50:15-26: info: atom does not occur in any rule head:
+  astatine(X)
+
+/tmp/tmp6wqkxtq2:51:19-29: info: atom does not occur in any rule head:
+  lithium(X)
+
+/tmp/tmp6wqkxtq2:52:19-28: info: atom does not occur in any rule head:
+  sodium(X)
+
+/tmp/tmp6wqkxtq2:53:19-31: info: atom does not occur in any rule head:
+  potassium(X)
+
+/tmp/tmp6wqkxtq2:54:19-30: info: atom does not occur in any rule head:
+  rubidium(X)
+
+/tmp/tmp6wqkxtq2:55:19-29: info: atom does not occur in any rule head:
+  caesium(X)
+

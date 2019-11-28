@@ -1,0 +1,6 @@
+/tmp/tmpaygqso3p:43:182-227: info: atom does not occur in any rule head:
+  atom_cycle__4__with__analysis(S1,S2,S3,S4)
+
+/tmp/tmpaygqso3p:52:181-210: info: atom does not occur in any rule head:
+  atom_cycle__4(S1,S2,S3,S4)
+

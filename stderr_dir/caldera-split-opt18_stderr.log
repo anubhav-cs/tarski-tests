@@ -1,0 +1,15 @@
+/tmp/tmp6e0z43ue:91:19-27: info: atom does not occur in any rule head:
+  value(X)
+
+/tmp/tmp6e0z43ue:93:18-32: info: atom does not occur in any rule head:
+  object_type(X)
+
+/tmp/tmp6e0z43ue:98:24-45: info: atom does not occur in any rule head:
+  observedconnection(X)
+
+/tmp/tmp6e0z43ue:101:24-50: info: atom does not occur in any rule head:
+  observedlocalcredential(X)
+
+/tmp/tmp6e0z43ue:107:24-44: info: atom does not occur in any rule head:
+  observedlocaluser(X)
+

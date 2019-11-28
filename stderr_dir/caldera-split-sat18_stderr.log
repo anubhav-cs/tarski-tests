@@ -1,0 +1,15 @@
+/tmp/tmp7fsi5tua:112:19-27: info: atom does not occur in any rule head:
+  value(X)
+
+/tmp/tmp7fsi5tua:114:18-32: info: atom does not occur in any rule head:
+  object_type(X)
+
+/tmp/tmp7fsi5tua:119:24-45: info: atom does not occur in any rule head:
+  observedconnection(X)
+
+/tmp/tmp7fsi5tua:122:24-50: info: atom does not occur in any rule head:
+  observedlocalcredential(X)
+
+/tmp/tmp7fsi5tua:128:24-44: info: atom does not occur in any rule head:
+  observedlocaluser(X)
+

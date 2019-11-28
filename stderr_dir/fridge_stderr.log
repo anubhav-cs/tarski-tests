@@ -1,0 +1,56 @@
+ERROR:root:message
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/Lexer.py", line 128, in nextToken
+    ttype = self._interp.match(self._input, self._mode)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/atn/LexerATNSimulator.py", line 99, in match
+    return self.execATN(input, dfa.s0)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/atn/LexerATNSimulator.py", line 191, in execATN
+    return self.failOrAccept(self.prevAccept, input, s.configs, t)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/atn/LexerATNSimulator.py", line 250, in failOrAccept
+    raise LexerNoViableAltException(self.recog, input, self.startIndex, reach)
+antlr4.error.Errors.LexerNoViableAltException: LexerNoViableAltException(':')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "tarski_test.py", line 17, in main
+    status = ground_generate_task( domain_file, problem_file, None)
+  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 94, in ground_generate_task
+    read_problem( domain_file, problem_file)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 43, in read_problem
+    self.parse_domain(domain)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 53, in parse_domain
+    self.parse_file(filename, 'domain')
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 49, in parse_file
+    domain_parse_tree, _ = self.parser.parse_file(filename, start_rule)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 34, in parse_file
+    return self._parse_stream(FileStream(filename, encoding='utf-8'), start_rule)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 42, in _parse_stream
+    tree = getattr(parser, start_rule)()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 828, in domain
+    self.requireDef()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 982, in requireDef
+    self.match(fstripsParser.REQUIRE_KEY)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/Parser.py", line 116, in match
+    self.consume()
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/Parser.py", line 340, in consume
+    self.getInputStream().consume()
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/BufferedTokenStream.py", line 100, in consume
+    self.index = self.adjustSeekIndex(self.index + 1)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/CommonTokenStream.py", line 44, in adjustSeekIndex
+    return self.nextTokenOnChannel(i, self.channel)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/BufferedTokenStream.py", line 213, in nextTokenOnChannel
+    self.sync(i)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/BufferedTokenStream.py", line 111, in sync
+    fetched = self.fetch(n)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/BufferedTokenStream.py", line 123, in fetch
+    t = self.tokenSource.nextToken()
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/Lexer.py", line 130, in nextToken
+    self.notifyListeners(e)		# report error
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/Lexer.py", line 285, in notifyListeners
+    listener.syntaxError(self, None, self._tokenStartLine, self._tokenStartColumn, msg, e)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/error/ErrorListener.py", line 60, in syntaxError
+    delegate.syntaxError(recognizer, offendingSymbol, line, column, msg, e)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 495, in syntaxError
+    raise ParsingError(msg)
+tarski.io._fstrips.reader.ParsingError: line 15:33 token recognition error at: ':quani'

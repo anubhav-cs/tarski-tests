@@ -1,0 +1,23 @@
+ERROR:root:message
+Traceback (most recent call last):
+  File "tarski_test.py", line 17, in main
+    status = ground_generate_task( domain_file, problem_file, None)
+  File "/home/anubhav-cs/Github/width-based-algos-LAPKT/tarski-test_suite/tarski_util.py", line 106, in ground_generate_task
+    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 39, in ground_actions
+    model = self._solve_lp()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 49, in _solve_lp
+    lp, tr = create_reachability_lp(self.problem)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/asp.py", line 21, in create_reachability_lp
+    compiler.create()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/asp.py", line 71, in create
+    head, body = self.process_effect(lang, eff)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/asp.py", line 167, in process_effect
+    return head, self.process_formula(condition)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/asp.py", line 102, in process_formula
+    return list(itertools.chain.from_iterable(self.process_formula(sub) for sub in f.subformulas))
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/asp.py", line 102, in <genexpr>
+    return list(itertools.chain.from_iterable(self.process_formula(sub) for sub in f.subformulas))
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/asp.py", line 121, in process_formula
+    raise RuntimeError("Negation of arbitrary formulas not yet implemented")
+RuntimeError: Negation of arbitrary formulas not yet implemented

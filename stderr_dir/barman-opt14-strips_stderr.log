@@ -1,0 +1,6 @@
+/tmp/tmpr92ml5_r:24:19-30: info: atom does not occur in any rule head:
+  beverage(X)
+
+/tmp/tmpr92ml5_r:26:19-31: info: atom does not occur in any rule head:
+  container(X)
+
