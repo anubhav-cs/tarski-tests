@@ -8,7 +8,6 @@ import resource
 import logging
 
 from tarski_util import ground_generate_task
-from tarski_util import ground_generate_task
 from os.path import basename, abspath, dirname
 
 def main( domain_file, problem_file) :
