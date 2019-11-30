@@ -1,4 +1,4 @@
-(define (problem tetris-12-4-5951028)
+(define (problem tetris-12-4-7589341)
 (:domain tetris)
 (:objects  
 f0-0f f0-1f f0-2f f0-3f 
@@ -14,8 +14,8 @@ f9-0f f9-1f f9-2f f9-3f
 f10-0f f10-1f f10-2f f10-3f 
 f11-0f f11-1f f11-2f f11-3f - position
 square0 square1 square2 square3 - one_square
-straight0 straight1 straight2 - two_straight
-rightl0 - right_l
+nada- two_straight
+rightl0 rightl1 rightl2 rightl3 rightl4 rightl5 - right_l
 )
 (:init
 (connected f0-0f f0-1f)
@@ -178,20 +178,11 @@ rightl0 - right_l
 (connected f11-2f f10-2f)
 (connected f10-3f f11-3f)
 (connected f11-3f f10-3f)
-(clear f0-0f)
 (clear f0-3f)
 (clear f1-3f)
-(clear f2-0f)
-(clear f2-1f)
-(clear f2-2f)
-(clear f2-3f)
-(clear f3-0f)
 (clear f3-3f)
 (clear f4-3f)
-(clear f5-3f)
 (clear f6-0f)
-(clear f6-1f)
-(clear f6-2f)
 (clear f6-3f)
 (clear f7-0f)
 (clear f7-1f)
@@ -213,14 +204,16 @@ rightl0 - right_l
 (clear f11-1f)
 (clear f11-2f)
 (clear f11-3f)
-(at_right_l rightl0 f0-1f f1-1f f1-2f)
-(at_two straight0 f3-1f f4-1f)
-(at_two straight1 f3-2f f4-2f)
-(at_two straight2 f4-0f f5-0f)
-(at_square square0 f0-2f)
-(at_square square1 f1-0f)
-(at_square square2 f5-1f)
-(at_square square3 f5-2f)
+(at_right_l rightl0 f1-2f f2-2f f2-3f)
+(at_right_l rightl1 f3-0f f4-0f f4-1f)
+(at_right_l rightl2 f5-1f f6-1f f6-2f)
+(at_right_l rightl3 f2-1f f3-1f f3-2f)
+(at_right_l rightl4 f4-2f f5-2f f5-3f)
+(at_right_l rightl5 f0-0f f1-0f f1-1f)
+(at_square square0 f0-1f)
+(at_square square1 f0-2f)
+(at_square square2 f2-0f)
+(at_square square3 f5-0f)
 (= (total-cost) 0)
 )
 (:goal
@@ -254,13 +247,13 @@ rightl0 - right_l
 (:metric minimize (total-cost))
 )
 ;; description of the initial state
-;; 0   **  ##  ##  ** 
+;; 0   ##  ##  ##  ** 
 ;; 1   ##  ##  ##  ** 
-;; 2   **  **  **  ** 
-;; 3   **  ##  ##  ** 
+;; 2   ##  ##  ##  ## 
+;; 3   ##  ##  ##  ** 
 ;; 4   ##  ##  ##  ** 
-;; 5   ##  ##  ##  ** 
-;; 6   **  **  **  ** 
+;; 5   ##  ##  ##  ## 
+;; 6   **  ##  ##  ** 
 ;; 7   **  **  **  ** 
 ;; 8   **  **  **  ** 
 ;; 9   **  **  **  ** 
