@@ -1,0 +1,6 @@
+/tmp/tmp16xdj9hw:57:102-139: info: atom does not occur in any rule head:
+  atom_cycle__2__with__analysis(S1,S2)
+
+/tmp/tmp16xdj9hw:67:101-122: info: atom does not occur in any rule head:
+  atom_cycle__2(S1,S2)
+

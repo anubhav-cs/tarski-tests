@@ -1,8 +1,8 @@
 ERROR:root:message
 Traceback (most recent call last):
-  File "tarski_test.py", line 17, in main
-    status = ground_generate_task( domain_file, problem_file, None)
-  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 94, in ground_generate_task
+  File "tarski_test.py", line 32, in main
+    status = ground_generate_task( domain_file, problem_file, None, verbose, lenient)
+  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 105, in ground_generate_task
     read_problem( domain_file, problem_file)
   File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 43, in read_problem
     self.parse_domain(domain)

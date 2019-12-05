@@ -27,8 +27,8 @@
     (empty ?input-variable0 - input-variable)
     (next ?index0 - index ?index1 - index)
     (input-assignment ?input-variable0 - input-variable ?input1 - input ?stackrow2 - stackrow)
-    (empty-stack)
-    (next-stack-row ?stackrow0 - stackrow ?stackrow1 - stackrow)
+    (EMPTY-STACK)
+    (NEXT-STACK-ROW ?stackrow0 - stackrow ?stackrow1 - stackrow)
     (top-stack ?stackrow0 - stackrow)
     (accumulator)
     (done-evaluating)
@@ -111,8 +111,8 @@
     (ins-get-substr-4 ?input-variable0 - input-variable ?limiter1 - limiter ?limiter2 - limiter)
     (ins-get-substr-5 ?input-variable0 - input-variable ?limiter1 - limiter ?limiter2 - limiter)
     (ins-get-substr-6 ?input-variable0 - input-variable ?limiter1 - limiter ?limiter2 - limiter)
-    (goto-0-0-0)
-    (goto-0-0-1)
+    (GOTO-0-0-0)
+    (GOTO-0-0-1)
     (goto-0-0-2)
     (goto-0-0-3)
     (goto-0-0-4)
@@ -120,8 +120,8 @@
     (goto-0-0-6)
     (goto-0-0-7)
     (goto-0-1-0)
-    (goto-0-1-1)
-    (goto-0-1-2)
+    (GOTO-0-1-1)
+    (GOTO-0-1-2)
     (goto-0-1-3)
     (goto-0-1-4)
     (goto-0-1-5)
@@ -129,8 +129,8 @@
     (goto-0-1-7)
     (goto-0-2-0)
     (goto-0-2-1)
-    (goto-0-2-2)
-    (goto-0-2-3)
+    (GOTO-0-2-2)
+    (GOTO-0-2-3)
     (goto-0-2-4)
     (goto-0-2-5)
     (goto-0-2-6)
@@ -138,8 +138,8 @@
     (goto-0-3-0)
     (goto-0-3-1)
     (goto-0-3-2)
-    (goto-0-3-3)
-    (goto-0-3-4)
+    (GOTO-0-3-3)
+    (GOTO-0-3-4)
     (goto-0-3-5)
     (goto-0-3-6)
     (goto-0-3-7)
@@ -147,8 +147,8 @@
     (goto-0-4-1)
     (goto-0-4-2)
     (goto-0-4-3)
-    (goto-0-4-4)
-    (goto-0-4-5)
+    (GOTO-0-4-4)
+    (GOTO-0-4-5)
     (goto-0-4-6)
     (goto-0-4-7)
     (goto-0-5-0)
@@ -156,8 +156,8 @@
     (goto-0-5-2)
     (goto-0-5-3)
     (goto-0-5-4)
-    (goto-0-5-5)
-    (goto-0-5-6)
+    (GOTO-0-5-5)
+    (GOTO-0-5-6)
     (goto-0-5-7)
     (goto-0-6-0)
     (goto-0-6-1)
@@ -165,8 +165,8 @@
     (goto-0-6-3)
     (goto-0-6-4)
     (goto-0-6-5)
-    (goto-0-6-6)
-    (goto-0-6-7)
+    (GOTO-0-6-6)
+    (GOTO-0-6-7)
     (cond-assignment-0-0 ?string0 - string ?index1 - index ?char2 - char)
     (cond-assignment-0-1 ?string0 - string ?index1 - index ?char2 - char)
     (cond-assignment-0-2 ?string0 - string ?index1 - index ?char2 - char)
@@ -12623,7 +12623,7 @@
     (and
         (ins-end-1)
         (test-0)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-1 ?stackrow1)
@@ -12649,7 +12649,7 @@
     (and
         (ins-end-2)
         (test-0)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-2 ?stackrow1)
@@ -12675,7 +12675,7 @@
     (and
         (ins-end-3)
         (test-0)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-3 ?stackrow1)
@@ -12701,7 +12701,7 @@
     (and
         (ins-end-4)
         (test-0)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-4 ?stackrow1)
@@ -12727,7 +12727,7 @@
     (and
         (ins-end-5)
         (test-0)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-5 ?stackrow1)
@@ -12753,7 +12753,7 @@
     (and
         (ins-end-6)
         (test-0)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-6 ?stackrow1)
@@ -12779,7 +12779,7 @@
     (and
         (ins-end-7)
         (test-0)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-7 ?stackrow1)
@@ -12805,7 +12805,7 @@
     (and
         (ins-end-1)
         (test-1)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-1 ?stackrow1)
@@ -12831,7 +12831,7 @@
     (and
         (ins-end-2)
         (test-1)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-2 ?stackrow1)
@@ -12857,7 +12857,7 @@
     (and
         (ins-end-3)
         (test-1)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-3 ?stackrow1)
@@ -12883,7 +12883,7 @@
     (and
         (ins-end-4)
         (test-1)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-4 ?stackrow1)
@@ -12909,7 +12909,7 @@
     (and
         (ins-end-5)
         (test-1)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-5 ?stackrow1)
@@ -12935,7 +12935,7 @@
     (and
         (ins-end-6)
         (test-1)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-6 ?stackrow1)
@@ -12961,7 +12961,7 @@
     (and
         (ins-end-7)
         (test-1)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-7 ?stackrow1)
@@ -12987,7 +12987,7 @@
     (and
         (ins-end-1)
         (test-2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-1 ?stackrow1)
@@ -13013,7 +13013,7 @@
     (and
         (ins-end-2)
         (test-2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-2 ?stackrow1)
@@ -13039,7 +13039,7 @@
     (and
         (ins-end-3)
         (test-2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-3 ?stackrow1)
@@ -13065,7 +13065,7 @@
     (and
         (ins-end-4)
         (test-2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-4 ?stackrow1)
@@ -13091,7 +13091,7 @@
     (and
         (ins-end-5)
         (test-2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-5 ?stackrow1)
@@ -13117,7 +13117,7 @@
     (and
         (ins-end-6)
         (test-2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-6 ?stackrow1)
@@ -13143,7 +13143,7 @@
     (and
         (ins-end-7)
         (test-2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-7 ?stackrow1)
@@ -13169,7 +13169,7 @@
     (and
         (ins-end-1)
         (test-3)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-1 ?stackrow1)
@@ -13195,7 +13195,7 @@
     (and
         (ins-end-2)
         (test-3)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-2 ?stackrow1)
@@ -13221,7 +13221,7 @@
     (and
         (ins-end-3)
         (test-3)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-3 ?stackrow1)
@@ -13247,7 +13247,7 @@
     (and
         (ins-end-4)
         (test-3)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-4 ?stackrow1)
@@ -13273,7 +13273,7 @@
     (and
         (ins-end-5)
         (test-3)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-5 ?stackrow1)
@@ -13299,7 +13299,7 @@
     (and
         (ins-end-6)
         (test-3)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-6 ?stackrow1)
@@ -13325,7 +13325,7 @@
     (and
         (ins-end-7)
         (test-3)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-7 ?stackrow1)
@@ -13351,7 +13351,7 @@
     (and
         (ins-end-1)
         (test-4)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-1 ?stackrow1)
@@ -13377,7 +13377,7 @@
     (and
         (ins-end-2)
         (test-4)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-2 ?stackrow1)
@@ -13403,7 +13403,7 @@
     (and
         (ins-end-3)
         (test-4)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-3 ?stackrow1)
@@ -13429,7 +13429,7 @@
     (and
         (ins-end-4)
         (test-4)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-4 ?stackrow1)
@@ -13455,7 +13455,7 @@
     (and
         (ins-end-5)
         (test-4)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-5 ?stackrow1)
@@ -13481,7 +13481,7 @@
     (and
         (ins-end-6)
         (test-4)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-6 ?stackrow1)
@@ -13507,7 +13507,7 @@
     (and
         (ins-end-7)
         (test-4)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow1)
         (stack-main ?stackrow1)
         (stack-line-7 ?stackrow1)
@@ -13532,7 +13532,7 @@
     :precondition
     (and
         (call-0-0-0 ?input-variable2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow0)
         (stack-main ?stackrow0)
         (stack-line-0 ?stackrow0)
@@ -13560,7 +13560,7 @@
     :precondition
     (and
         (call-0-0-1 ?input-variable2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow0)
         (stack-main ?stackrow0)
         (stack-line-1 ?stackrow0)
@@ -13588,7 +13588,7 @@
     :precondition
     (and
         (call-0-0-2 ?input-variable2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow0)
         (stack-main ?stackrow0)
         (stack-line-2 ?stackrow0)
@@ -13616,7 +13616,7 @@
     :precondition
     (and
         (call-0-0-3 ?input-variable2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow0)
         (stack-main ?stackrow0)
         (stack-line-3 ?stackrow0)
@@ -13644,7 +13644,7 @@
     :precondition
     (and
         (call-0-0-4 ?input-variable2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow0)
         (stack-main ?stackrow0)
         (stack-line-4 ?stackrow0)
@@ -13672,7 +13672,7 @@
     :precondition
     (and
         (call-0-0-5 ?input-variable2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow0)
         (stack-main ?stackrow0)
         (stack-line-5 ?stackrow0)
@@ -13700,7 +13700,7 @@
     :precondition
     (and
         (call-0-0-6 ?input-variable2)
-        (next-stack-row ?stackrow0 ?stackrow1)
+        (NEXT-STACK-ROW ?stackrow0 ?stackrow1)
         (top-stack ?stackrow0)
         (stack-main ?stackrow0)
         (stack-line-6 ?stackrow0)

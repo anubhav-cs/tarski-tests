@@ -34,7 +34,7 @@
     (assignment str2 i3 y)
     (assignment str2 i4 q)
     (test-0)
-    (next-stack-row row-0 row-1)
+    (NEXT-STACK-ROW row-0 row-1)
     (stack-main row-0)
     (stack-line-0 row-0)
     (top-stack row-0)

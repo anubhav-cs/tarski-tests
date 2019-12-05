@@ -1,6 +1,6 @@
-/tmp/tmpbqw_b3hg:35:102-139: info: atom does not occur in any rule head:
+/tmp/tmpuciawgtc:49:102-139: info: atom does not occur in any rule head:
   atom_cycle__2__with__analysis(S1,S2)
 
-/tmp/tmpbqw_b3hg:45:101-122: info: atom does not occur in any rule head:
+/tmp/tmpuciawgtc:59:101-122: info: atom does not occur in any rule head:
   atom_cycle__2(S1,S2)
 

@@ -1,0 +1,40 @@
+ERROR:root:message
+Traceback (most recent call last):
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 4900, in problem
+    self.match(fstripsParser.T__1)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/Parser.py", line 118, in match
+    t = self._errHandler.recoverInline(self)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/error/ErrorStrategy.py", line 396, in recoverInline
+    raise InputMismatchException(recognizer)
+antlr4.error.Errors.InputMismatchException: None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "tarski_test.py", line 30, in main
+    status = ground_generate_task( domain_file, problem_file, None, verbose, lenient)
+  File "/home/anubhav-cs/Github/tarski/tests/classical_planning-test_suite/tarski_util.py", line 105, in ground_generate_task
+    read_problem( domain_file, problem_file)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 44, in read_problem
+    self.parse_instance(instance)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 56, in parse_instance
+    self.parse_file(filename, 'problem')
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 49, in parse_file
+    domain_parse_tree, _ = self.parser.parse_file(filename, start_rule)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 34, in parse_file
+    return self._parse_stream(FileStream(filename, encoding='utf-8'), start_rule)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 42, in _parse_stream
+    tree = getattr(parser, start_rule)()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 4939, in problem
+    self._errHandler.reportError(self, re)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/error/ErrorStrategy.py", line 126, in reportError
+    self.reportInputMismatch(recognizer, e)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/error/ErrorStrategy.py", line 264, in reportInputMismatch
+    recognizer.notifyErrorListeners(msg, e.offendingToken, e)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/Parser.py", line 314, in notifyErrorListeners
+    listener.syntaxError(self, offendingToken, line, column, msg, e)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/error/ErrorListener.py", line 60, in syntaxError
+    delegate.syntaxError(recognizer, offendingSymbol, line, column, msg, e)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 495, in syntaxError
+    raise ParsingError(msg)
+tarski.io._fstrips.reader.ParsingError: line 10:1 mismatched input 'DEFINE' expecting 'define'

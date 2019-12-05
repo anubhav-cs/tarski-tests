@@ -1,6 +1,0 @@
-/tmp/tmp75zvsrmx:22:19-28: info: atom does not occur in any rule head:
-  target(X)
-
-/tmp/tmp75zvsrmx:23:19-31: info: atom does not occur in any rule head:
-  locatable(X)
-

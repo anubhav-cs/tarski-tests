@@ -1,0 +1,29 @@
+ERROR:root:message
+Traceback (most recent call last):
+  File "tarski_test.py", line 32, in main
+    status = ground_generate_task( domain_file, problem_file, None, verbose, lenient)
+  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 101, in ground_generate_task
+    read_problem( domain_file, problem_file)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 44, in read_problem
+    self.parse_instance(instance)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 56, in parse_instance
+    self.parse_file(filename, 'problem')
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/fstrips.py", line 50, in parse_file
+    self.parser.visit(domain_parse_tree)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/tree/Tree.py", line 34, in visit
+    return tree.accept(self)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 4883, in accept
+    return visitor.visitProblem(self)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/parser/visitor.py", line 379, in visitProblem
+    return self.visitChildren(ctx)
+  File "/usr/local/lib/python3.7/dist-packages/antlr4/tree/Tree.py", line 44, in visitChildren
+    childResult = c.accept(self)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/parser/parser.py", line 5143, in accept
+    return visitor.visitObject_declaration(self)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/io/_fstrips/reader.py", line 170, in visitObject_declaration
+    self.language.constant(o, t)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/fol.py", line 210, in constant
+    self._check_name_not_defined(name, self._constants, err.DuplicateConstantDefinition)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/fol.py", line 245, in _check_name_not_defined
+    raise err.DuplicateDefinition(name, self._global_index[name])
+tarski.errors.DuplicateDefinition: Duplicate definition of element "cart": "Sort(cart)"

@@ -1,60 +1,13 @@
-/tmp/tmpsa4hae8r:26:19-35: info: atom does not occur in any rule head:
-  chemical_atom(X)
-
-/tmp/tmpsa4hae8r:27:26-39: info: atom does not occur in any rule head:
-  phosphorus(X)
-
-/tmp/tmpsa4hae8r:28:26-36: info: atom does not occur in any rule head:
-  calcium(X)
-
-/tmp/tmpsa4hae8r:29:26-35: info: atom does not occur in any rule head:
-  sulfur(X)
-
-/tmp/tmpsa4hae8r:30:26-38: info: atom does not occur in any rule head:
-  magnesium(X)
-
-/tmp/tmpsa4hae8r:31:26-38: info: atom does not occur in any rule head:
-  aluminium(X)
-
-/tmp/tmpsa4hae8r:32:26-37: info: atom does not occur in any rule head:
-  chromium(X)
-
-/tmp/tmpsa4hae8r:33:26-33: info: atom does not occur in any rule head:
-  iron(X)
-
-/tmp/tmpsa4hae8r:34:26-38: info: atom does not occur in any rule head:
-  manganese(X)
-
-/tmp/tmpsa4hae8r:35:26-36: info: atom does not occur in any rule head:
-  mercury(X)
-
-/tmp/tmpsa4hae8r:36:26-34: info: atom does not occur in any rule head:
-  boron(X)
-
-/tmp/tmpsa4hae8r:37:26-35: info: atom does not occur in any rule head:
-  copper(X)
-
-/tmp/tmpsa4hae8r:38:26-38: info: atom does not occur in any rule head:
-  palladium(X)
-
-/tmp/tmpsa4hae8r:39:26-36: info: atom does not occur in any rule head:
-  r_group(X)
-
-/tmp/tmpsa4hae8r:40:20-30: info: atom does not occur in any rule head:
-  halogen(X)
-
-/tmp/tmpsa4hae8r:41:20-34: info: atom does not occur in any rule head:
-  alkalimetal(X)
-
-/tmp/tmpsa4hae8r:42:20-27: info: atom does not occur in any rule head:
-  hcno(X)
-
-/tmp/tmpsa4hae8r:43:17-22: info: atom does not occur in any rule head:
-  hc(X)
-
-/tmp/tmpsa4hae8r:44:17-28: info: atom does not occur in any rule head:
-  nitrogen(X)
-
-/tmp/tmpsa4hae8r:48:20-31: info: atom does not occur in any rule head:
-  chlorine(X)
-
+ERROR:root:message
+Traceback (most recent call last):
+  File "tarski_test.py", line 32, in main
+    status = ground_generate_task( domain_file, problem_file, None, verbose, lenient)
+  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 115, in ground_generate_task
+    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 50, in ground_actions
+    model = self._solve_lp()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 62, in _solve_lp
+    model_filename, theory_filename = run_clingo(lp)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/clingo_wrapper.py", line 26, in run_clingo
+    raise ExternalCommandError("Gringo exited with code {}".format(retcode))
+tarski.errors.ExternalCommandError: Gringo exited with code -9

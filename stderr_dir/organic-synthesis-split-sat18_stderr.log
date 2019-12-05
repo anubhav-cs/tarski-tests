@@ -1,71 +1,60 @@
-/tmp/tmp29a9hfqe:24:19-35: info: atom does not occur in any rule head:
-  chemical_atom(X)
+/tmp/tmps9ee_aar:319:93-106: info: atom does not occur in any rule head:
+  atom_do_1_7
 
-/tmp/tmp29a9hfqe:26:26-36: info: atom does not occur in any rule head:
-  calcium(X)
+/tmp/tmps9ee_aar:332:105-119: info: atom does not occur in any rule head:
+  atom_do_1_15
 
-/tmp/tmp29a9hfqe:27:26-35: info: atom does not occur in any rule head:
-  sulfur(X)
+/tmp/tmps9ee_aar:459:106-119: info: atom does not occur in any rule head:
+  atom_do_4_4
 
-/tmp/tmp29a9hfqe:28:26-38: info: atom does not occur in any rule head:
-  magnesium(X)
+/tmp/tmps9ee_aar:467:105-118: info: atom does not occur in any rule head:
+  atom_do_5_4
 
-/tmp/tmp29a9hfqe:29:26-38: info: atom does not occur in any rule head:
-  aluminium(X)
+/tmp/tmps9ee_aar:479:93-107: info: atom does not occur in any rule head:
+  atom_do_5_10
 
-/tmp/tmp29a9hfqe:30:26-37: info: atom does not occur in any rule head:
-  chromium(X)
+/tmp/tmps9ee_aar:485:120-133: info: atom does not occur in any rule head:
+  atom_do_6_2
 
-/tmp/tmp29a9hfqe:31:26-33: info: atom does not occur in any rule head:
-  iron(X)
+/tmp/tmps9ee_aar:521:106-120: info: atom does not occur in any rule head:
+  atom_do_6_23
 
-/tmp/tmp29a9hfqe:32:26-38: info: atom does not occur in any rule head:
-  manganese(X)
+/tmp/tmps9ee_aar:527:103-116: info: atom does not occur in any rule head:
+  atom_do_7_6
 
-/tmp/tmp29a9hfqe:33:26-36: info: atom does not occur in any rule head:
-  mercury(X)
+/tmp/tmps9ee_aar:545:101-115: info: atom does not occur in any rule head:
+  atom_do_7_17
 
-/tmp/tmp29a9hfqe:34:26-34: info: atom does not occur in any rule head:
-  boron(X)
+/tmp/tmps9ee_aar:564:84-98: info: atom does not occur in any rule head:
+  atom_do_7_27
 
-/tmp/tmp29a9hfqe:35:26-35: info: atom does not occur in any rule head:
-  copper(X)
+/tmp/tmps9ee_aar:611:95-109: info: atom does not occur in any rule head:
+  atom_do_9_10
 
-/tmp/tmp29a9hfqe:36:26-38: info: atom does not occur in any rule head:
-  palladium(X)
+/tmp/tmps9ee_aar:627:106-120: info: atom does not occur in any rule head:
+  atom_do_10_6
 
-/tmp/tmp29a9hfqe:37:26-36: info: atom does not occur in any rule head:
-  r_group(X)
+/tmp/tmps9ee_aar:661:99-114: info: atom does not occur in any rule head:
+  atom_do_10_25
 
-/tmp/tmp29a9hfqe:38:20-30: info: atom does not occur in any rule head:
-  halogen(X)
+/tmp/tmps9ee_aar:735:116-130: info: atom does not occur in any rule head:
+  atom_do_12_3
 
-/tmp/tmp29a9hfqe:39:20-34: info: atom does not occur in any rule head:
-  alkalimetal(X)
+/tmp/tmps9ee_aar:749:106-120: info: atom does not occur in any rule head:
+  atom_do_13_5
 
-/tmp/tmp29a9hfqe:40:20-27: info: atom does not occur in any rule head:
-  hcno(X)
+/tmp/tmps9ee_aar:758:124-139: info: atom does not occur in any rule head:
+  atom_do_13_10
 
-/tmp/tmp29a9hfqe:41:17-22: info: atom does not occur in any rule head:
-  hc(X)
+/tmp/tmps9ee_aar:782:111-125: info: atom does not occur in any rule head:
+  atom_do_14_5
 
-/tmp/tmp29a9hfqe:47:20-31: info: atom does not occur in any rule head:
-  fluorine(X)
+/tmp/tmps9ee_aar:872:102-117: info: atom does not occur in any rule head:
+  atom_do_16_11
 
-/tmp/tmp29a9hfqe:48:20-30: info: atom does not occur in any rule head:
-  bromine(X)
+/tmp/tmps9ee_aar:877:84-99: info: atom does not occur in any rule head:
+  atom_do_16_17
 
-/tmp/tmp29a9hfqe:49:20-29: info: atom does not occur in any rule head:
-  iodine(X)
+/tmp/tmps9ee_aar:881:101-115: info: atom does not occur in any rule head:
+  atom_do_17_3
 
-ERROR:root:message
-Traceback (most recent call last):
-  File "tarski_test.py", line 17, in main
-    status = ground_generate_task( domain_file, problem_file, None)
-  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 106, in ground_generate_task
-    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
-  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 39, in ground_actions
-    model = self._solve_lp()
-  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 54, in _solve_lp
-    raise ReachabilityLPUnsolvable()
-tarski.grounding.errors.ReachabilityLPUnsolvable: The relaxed-reachabilty logic program is not solvable

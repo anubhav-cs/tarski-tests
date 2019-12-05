@@ -1,6 +1,0 @@
-/tmp/tmp4jap106z:35:19-30: info: atom does not occur in any rule head:
-  beverage(X)
-
-/tmp/tmp4jap106z:37:19-31: info: atom does not occur in any rule head:
-  container(X)
-

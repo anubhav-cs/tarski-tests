@@ -1,0 +1,13 @@
+ERROR:root:message
+Traceback (most recent call last):
+  File "tarski_test.py", line 32, in main
+    status = ground_generate_task( domain_file, problem_file, None, verbose, lenient)
+  File "/home/anubhav-cs/Github/tarski-tests/tarski_util.py", line 115, in ground_generate_task
+    reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 50, in ground_actions
+    model = self._solve_lp()
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/grounding/lp_grounding.py", line 62, in _solve_lp
+    model_filename, theory_filename = run_clingo(lp)
+  File "/home/anubhav-cs/Applications/tarski/src/tarski/reachability/clingo_wrapper.py", line 26, in run_clingo
+    raise ExternalCommandError("Gringo exited with code {}".format(retcode))
+tarski.errors.ExternalCommandError: Gringo exited with code -9
