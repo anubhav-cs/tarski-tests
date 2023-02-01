@@ -138,8 +138,15 @@ def ground_generate_task( domain_file, problem_file, out_task) :
         process_problem( problem)
         init = problem.init_bk
         goal =  problem.goal
-        
+        max_arity = 0
+        for action in problem.actions.items():
+            arity = (len(action[1].parameters))
+            if max_arity < arity:
+                max_arity = arity
 
+    print("#init literals:", len(init))
+    print("#goal literals:",len(convert_dnf_into_atoms(goal)))
+    print("#max action arity:", max_arity)
 
     with time_taken( "grounding") :
         grounding               =   LPGroundingStrategy( problem)
@@ -147,16 +154,10 @@ def ground_generate_task( domain_file, problem_file, out_task) :
         fluents                 =   copy.deepcopy( grounding.ground_state_variables())
         del grounding
         count_params = 0
-        max_arity = 0
         for x, y in reachable_action_params.items() :
             count_params += 1
-            if len(y)>0 and max_arity < len(list(y)[0]):
-                max_arity = len(list(y)[0])
 
             
-    print("#init literals:", len(init))
-    print("#goal literals:",len(convert_dnf_into_atoms(goal)))
-    print("#max action arity:", max_arity)
     print("#ground actions:", count_params)
 
     return 1
