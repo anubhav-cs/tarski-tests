@@ -85,7 +85,7 @@ def convert_dnf_into_atoms( formula) :
     sub_a = []     # sub atoms
     if isinstance( formula, CompoundFormula):
         if (formula.connective == Connective.Not ) :
-            sub_a.append(form)
+            sub_a.append(formula)
         elif (formula.connective == Connective.And ) :
             for sub_formula in formula.subformulas:
                 sub_a += convert_dnf_into_atoms(sub_formula)
@@ -139,14 +139,25 @@ def ground_generate_task( domain_file, problem_file, out_task) :
         init = problem.init_bk
         goal =  problem.goal
         max_arity = 0
+        max_card_pre = 0
+        max_card_eff = 0
         for action in problem.actions.items():
             arity = (len(action[1].parameters))
             if max_arity < arity:
                 max_arity = arity
-
+            card_pre = len(convert_dnf_into_atoms(action[1].precondition))
+            if max_card_pre < card_pre:
+                max_card_pre = card_pre
+            card_eff = len(action[1].effects)
+            if max_card_eff < card_eff:
+                max_card_eff = card_eff
+        
     print("#init literals:", len(init))
     print("#goal literals:",len(convert_dnf_into_atoms(goal)))
-    print("#max action arity:", max_arity)
+    print("#objects:", len(problem.language.constants()))
+    print("Max action arity:", max_arity)
+    print("Max card pre:", max_card_pre)
+    print("Max card eff:", max_card_eff)
 
     with time_taken( "grounding") :
         grounding               =   LPGroundingStrategy( problem)
