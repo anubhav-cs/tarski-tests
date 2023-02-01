@@ -1,9 +1,0 @@
-/tmp/tmpnf485gr4:102:14-25: info: atom does not occur in any rule head:
-  resource(X)
-
-/tmp/tmpnf485gr4:5499:73-99: info: atom does not occur in any rule head:
-  connected__by__sea(P1,P2)
-
-/tmp/tmpnf485gr4:6234:30-42: info: atom does not occur in any rule head:
-  by__coast(P)
-

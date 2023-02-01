@@ -1,6 +1,0 @@
-/tmp/tmpql7xsfo5:49:102-139: info: atom does not occur in any rule head:
-  atom_cycle__2__with__analysis(S1,S2)
-
-/tmp/tmpql7xsfo5:59:101-122: info: atom does not occur in any rule head:
-  atom_cycle__2(S1,S2)
-

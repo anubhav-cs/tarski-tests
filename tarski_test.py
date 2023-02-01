@@ -29,7 +29,7 @@ def main( domain_file, problem_file, verbose, lenient) :
     print(basename(dirname(domain_file)),"," ,basename(problem_file),",", end="")
     status=False
     try :
-        status = ground_generate_task( domain_file, problem_file, None, verbose, lenient)
+        status = ground_generate_task( domain_file, problem_file, None)
     except :
         status = False
         logging.exception("message")
@@ -75,4 +75,4 @@ if __name__ == "__main__":
                     ' and necessary theories to process action costs.')
 
     args    =   parser.parse_args()
-    main( args.domain, args.problem, args.verbose, args.lenient )
+    main( args.domain, args.problem, True, args.lenient )

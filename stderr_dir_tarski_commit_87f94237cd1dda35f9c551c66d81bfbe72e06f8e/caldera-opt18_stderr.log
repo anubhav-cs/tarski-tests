@@ -1,9 +1,0 @@
-/tmp/tmp2l70sns6:98:19-40: info: atom does not occur in any rule head:
-  observedconnection(X)
-
-/tmp/tmp2l70sns6:101:19-45: info: atom does not occur in any rule head:
-  observedlocalcredential(X)
-
-/tmp/tmp2l70sns6:107:19-39: info: atom does not occur in any rule head:
-  observedlocaluser(X)
-

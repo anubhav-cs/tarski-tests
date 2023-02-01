@@ -1,15 +1,14 @@
-#!/usr/bin/env python3
 ################################################################################
-#                                                                              #
 # Info:     Utility methods for LAPKT-Tarski integration                       #
 #                                                                              #
-# Author:   Anubhav Singh (anubhav.singh.eng@gmail.com)                        #
+# Author:   Anubhav Singh                                                      #
 #                                                                              #
 # Date:     08-Sep-2019                                                        #
 #                                                                              #
 # Dependencies:                                                                #
-# 1. pip install tarski                                                        #
-# 2. python version - 3.x (as required by tarski)                              #
+# 1. pip install timers                                                        #
+# 2. pip install tarski                                                        #
+# 3. python 3.x                                                                #
 #                                                                              #
 ################################################################################
 '''
@@ -31,24 +30,23 @@ import contextlib
 
 # Tarski library imports
 #-----------------------------------------------------------------------------#
-from tarski.io import FstripsReader
-from tarski.reachability.asp import *
-from tarski.grounding import LPGroundingStrategy, NaiveGroundingStrategy
-from tarski.syntax.transform.quantifier_elimination import QuantifierElimination
-from tarski.syntax import (QuantifiedFormula, CompoundFormula, Tautology,
+from tarski_lapkt.io import FstripsReader
+from tarski_lapkt.reachability.asp import *
+from tarski_lapkt.grounding import LPGroundingStrategy, NaiveGroundingStrategy
+from tarski_lapkt.syntax.transform.quantifier_elimination import QuantifierElimination
+from tarski_lapkt.syntax import (QuantifiedFormula, CompoundFormula, Tautology,
     Function, Quantifier, land, CompoundTerm, Contradiction, symref)
-from tarski.syntax.builtins import BuiltinPredicateSymbol
-from tarski.syntax.transform.substitutions import create_substitution
-from tarski.syntax.transform.errors import TransformationError
-from tarski.fstrips import (UniversalEffect, AddEffect, DelEffect,
+from tarski_lapkt.syntax.builtins import BuiltinPredicateSymbol
+from tarski_lapkt.syntax.transform.substitutions import create_substitution
+from tarski_lapkt.syntax.transform.errors import TransformationError
+from tarski_lapkt.fstrips import (UniversalEffect, AddEffect, DelEffect,
     FunctionalEffect)
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#
 
 
-# DEFINED DEFAULT PARAMETERS
+# DEFINED CONSTANTS
 DEFAULTCOST =   1
-VERBOSE = False
-LENIENT_MODE = False
+DEFAULTCOST_METRIC =   1
 
 #-----------------------------------------------------------------------------#
 @contextlib.contextmanager
@@ -61,20 +59,56 @@ def time_taken( task_name: str) :
     time_taken: string - name of the task
     """
     start = ( time.time(), time.process_time())
-    if VERBOSE :
-        print("***Started - {} ...***".format(task_name))
+    print("***Started - {} ...***".format(task_name))
     sys.stdout.flush()
     yield
-    if VERBOSE :
-        print(("***Finished {} after {:.3f} seconds CPU time, {:.3f} seconds "+
-            "wall-clock time***\n").format( task_name, time.time()-start[0],
+    #print( "{:.3f} , ".format(time.time()-start[0]), end="")
+    print(("***Finished {} after {:.3f} seconds wall-clock time, {:.3f} seconds "+
+            "CPU time***\n").format( task_name, time.time()-start[0],
                 time.process_time()-start[1] ))
     sys.stdout.flush()
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#
 
+
+# conversion - iterative implementation
 #-----------------------------------------------------------------------------#
-def ground_generate_task( domain_file, problem_file, out_task=None, 
-        verbose_flag=False, lenient_flag=False) :
+def convert_dnf_into_atoms( formula) :
+    """
+    Arguments
+    =========
+    formula:
+    
+    Returns
+    =======
+    List
+    """
+    sub_a = []     # sub atoms
+    if isinstance( formula, CompoundFormula):
+        if (formula.connective == Connective.Not ) :
+            sub_a.append(form)
+        elif (formula.connective == Connective.And ) :
+            for sub_formula in formula.subformulas:
+                sub_a += convert_dnf_into_atoms(sub_formula)
+        elif (formula.connective == Connective.Or ) :
+            raise TransformationError("Or Connective not allowed",
+                    formula.connective,"Check the Connective")
+        else :
+            raise TransformationError("Unknown Connective",
+                    formula.connective,"Check the Connective")
+    elif isinstance( formula, Atom):
+        sub_a.append(formula)
+    elif isinstance( formula, Tautology):
+        sub_a.append(formula)
+    elif isinstance( formula, Contradiction):
+        sub_a.append(formula)
+    else :
+        raise TransformationError("Invalid type for formula", formula,
+                "Check the formula representation")
+    return sub_a
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#
+
+#-----------------------------------------------------------------------------#
+def ground_generate_task( domain_file, problem_file, out_task) :
     """
     Uses Tarski Grounder to generate the output task using pddl
 
@@ -88,27 +122,24 @@ def ground_generate_task( domain_file, problem_file, out_task=None,
     =======
     None
     """
-    global VERBOSE 
-    VERBOSE = verbose_flag
-    global LENIENT_MODE 
-    LENIENT_MODE = lenient_flag
+
     parsing_timer   =   time.process_time()
     #Setup a reader to read the domain and problem pddl files
+    # Anu - This takes much more time than the FD parser
     with time_taken( "reading and parsing pddl file") :
-        if LENIENT_MODE :
-            problem = FstripsReader( raise_on_error=True,
-                theories=None, strict_with_requirements=False).\
-            read_problem( domain_file, problem_file)
-        else :
-            problem = FstripsReader( raise_on_error=True,
-                theories=None).\
-            read_problem( domain_file, problem_file)
-        
-        
-
+        reader = FstripsReader( raise_on_error=True, theories=None)
+        problem = reader.read_problem( domain_file, problem_file)
+    """
+    # Eliminate Universal Effects and Quantifiers by transformation
+    with time_taken("finding static predicates") :
+        problem.fluent_preds = find_fluent_predicates( problem)
+    """
     with time_taken( "preprocessing tarski problem") :
         process_problem( problem)
         init = problem.init_bk
+        goal =  problem.goal
+        
+
 
     with time_taken( "grounding") :
         grounding               =   LPGroundingStrategy( problem)
@@ -117,12 +148,12 @@ def ground_generate_task( domain_file, problem_file, out_task=None,
         del grounding
         count_params = 0
         for x, y in reachable_action_params.items() :
-            for z in y :
-                count_params += 1
-        if VERBOSE : 
-            print("Total number of reachable action params = ", count_params)
+            count_params += 1
+    print("#init literals:", len(init))
+    print("#goal literals:",len(convert_dnf_into_atoms(goal)))
+    print("#ground actions:", count_params)
 
-    return True
+    return 1
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#
 
 #-----------------------------------------------------------------------------#
@@ -159,9 +190,13 @@ def process_problem(problem, task_id=[0,]) :
 
     for _, action in problem.actions.items() :
         effects = list()
-        action.cost = 1 # set default cost as 1
+        if  problem.plan_metric:
+            action.cost = DEFAULTCOST_METRIC
+        else :
+            action.cost = DEFAULTCOST
         for effect in action.effects :
-            effects += process_effects( effect, action, problem.language)
+            effects += process_effects( effect, action, 
+                problem.language, problem.plan_metric)
         action.effects = effects
         if ( 0 in task_id) or ( 1 in task_id) :
             action.precondition = process_formula( action.precondition,
@@ -170,7 +205,7 @@ def process_problem(problem, task_id=[0,]) :
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#
 
 #-----------------------------------------------------------------------------#
-def process_effects( eff, action, lang, task_id=[0,]) :
+def process_effects( eff, action, lang, plan_metric, task_id=[0,]) :
     """
     Elimates univeral effects by transforming to multiple conditional effects
 
@@ -191,7 +226,7 @@ def process_effects( eff, action, lang, task_id=[0,]) :
 
             # if Uni. Effect then transform to a list of Add/Del Effects
             if isinstance( effect, UniversalEffect) :
-                effect_l += process_effects( effect, action, lang)
+                effect_l += process_effects( effect, action, lang, plan_metric)
                 continue
 
             # else if Add/Del effect, just instantiate condition and atom
@@ -203,7 +238,7 @@ def process_effects( eff, action, lang, task_id=[0,]) :
                 raise TransformationError( "universal effect elimination",
                        eff, "No constants were defined!")
             cond_effects    = []
-            for values in itertools.product( *substs) :
+            for values in sorted(itertools.product( *substs)) :
                 subst       = create_substitution( syms, values)
                 cond_sub    = process_formula( term_substitution(
                     lang, effect.condition, subst), lang)
@@ -217,8 +252,8 @@ def process_effects( eff, action, lang, task_id=[0,]) :
                         eff, "Effect type can't be handled!")
                 cond_effects.append( ce)
             effect_l += cond_effects
-    elif isinstance( eff, FunctionalEffect) and (eff.lhs.symbol.symbol==
-        'total-cost') and (0 in task_id or 2 in task_id) :
+    elif isinstance( eff, FunctionalEffect) and (eff.lhs==
+            plan_metric.opt_expression[1]) and (0 in task_id or 2 in task_id) :
         action.cost = eff.rhs
     elif (isinstance(eff, AddEffect) or isinstance(eff, DelEffect)) and \
             (0 in task_id or 1 in task_id) :
@@ -227,7 +262,7 @@ def process_effects( eff, action, lang, task_id=[0,]) :
     else :
         effect_l.append( eff)
 
-    return effect_l
+    return sorted(effect_l, key = lambda x:str(x))
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#
 
 #-----------------------------------------------------------------------------#
@@ -243,11 +278,41 @@ def process_formula( formula, lang) :
     =======
     Transformed formula
     """
+    # Anu :  Added dnf check to flag formulas which may require DNF
+    formula.dnf_check = False
     if isinstance( formula, CompoundFormula) :
         sub_f   =   []
+        if formula.connective==Connective.Or :
+            formula.dnf_check   =   True
+                    
         for f in formula.subformulas :
             sub_f.append( process_formula( f, lang))
+            if f.dnf_check==True :
+                formula.dnf_check = True
         formula.subformulas =   sub_f
+        # Process Not connective with Compound subformulas
+        if (formula.connective == Connective.Not and 
+                not isinstance(formula.subformulas[0], Atom)):
+            assert len(formula.subformulas)==1
+            assert isinstance(formula.subformulas[0], CompoundFormula)
+            if formula.subformulas[0].connective==Connective.Not :
+                assert len(formula.subformulas[0].subformulas)==1
+                formula = process_formula(formula.subformulas[0].subformulas[0], lang)
+            else :
+                if formula.subformulas[0].connective==Connective.Or :
+                    formula.connective = Connective.And
+                elif formula.subformulas[0].connective==Connective.And :
+                    formula.connective = Connective.Or
+                else :
+                    raise TransformationError("Process compound formula", 
+                            formula.subformulas[0].connective,
+                    "Cannot process connective type '{}'"
+                    .format( st.sort.name))
+                new_f = []
+                for f in formula.subformulas[0].subformulas :
+                    new_f.append(process_formula(
+                        CompoundFormula(Connective.Not, [f,]), lang))
+                formula.subformulas = new_f
         return formula
     elif isinstance( formula, QuantifiedFormula) :
         return process_formula( ( QuantifierElimination.rewrite( lang, formula,
