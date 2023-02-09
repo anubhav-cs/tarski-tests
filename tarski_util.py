@@ -166,7 +166,7 @@ def ground_generate_task( domain_file, problem_file, out_task) :
     print("#objects:", len(problem.language.constants()))
     print("#predicates:", len(predicates))
     print("#action schema:", len(problem.actions.items()))
-    print("Max predicate arity", max_predicate_arity)
+    print("Max predicate arity:", max_predicate_arity)
     print("Max action arity:", max_action_arity)
     print("Max card pre:", max_card_pre)
     print("Max card eff:", max_card_eff)
