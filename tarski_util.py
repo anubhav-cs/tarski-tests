@@ -136,40 +136,52 @@ def ground_generate_task( domain_file, problem_file, out_task) :
     """
     with time_taken( "preprocessing tarski problem") :
         process_problem( problem)
-        init = problem.init_bk
-        goal =  problem.goal
-        max_arity = 0
-        max_card_pre = 0
-        max_card_eff = 0
-        for action in problem.actions.items():
-            arity = (len(action[1].parameters))
-            if max_arity < arity:
-                max_arity = arity
-            card_pre = len(convert_dnf_into_atoms(action[1].precondition))
-            if max_card_pre < card_pre:
-                max_card_pre = card_pre
-            card_eff = len(action[1].effects)
-            if max_card_eff < card_eff:
-                max_card_eff = card_eff
         
+    init = problem.init_bk
+    goal =  problem.goal
+    max_action_arity = 0
+    max_card_pre = 0
+    max_card_eff = 0
+    for action in problem.actions.items():
+        arity = (len(action[1].parameters))
+        if max_action_arity < arity:
+            max_action_arity = arity
+        card_pre = len(convert_dnf_into_atoms(action[1].precondition))
+        if max_card_pre < card_pre:
+            max_card_pre = card_pre
+        card_eff = len(action[1].effects)
+        if max_card_eff < card_eff:
+            max_card_eff = card_eff
+                
+    predicates = [predicate for predicate in problem.language.predicates 
+                  if not predicate.builtin]
+    
+    max_predicate_arity = 0
+    for predicate in predicates:
+        if max_predicate_arity < len(predicate.sort):
+            max_predicate_arity = len(predicate.sort)
+    
     print("#init literals:", len(init))
     print("#goal literals:",len(convert_dnf_into_atoms(goal)))
     print("#objects:", len(problem.language.constants()))
-    print("Max action arity:", max_arity)
+    print("#predicates:", len(predicates))
+    print("#action schema:", len(problem.actions.items()))
+    print("Max predicate arity", max_predicate_arity)
+    print("Max action arity:", max_action_arity)
     print("Max card pre:", max_card_pre)
     print("Max card eff:", max_card_eff)
 
-    with time_taken( "grounding") :
-        grounding               =   LPGroundingStrategy( problem)
-        reachable_action_params =   copy.deepcopy( grounding.ground_actions())
-        fluents                 =   copy.deepcopy( grounding.ground_state_variables())
-        del grounding
-        count_params = 0
-        for x, y in reachable_action_params.items() :
-            count_params += 1
+    # with time_taken( "grounding") :
+    #     grounding               =   LPGroundingStrategy( problem)
+    #     reachable_action_params =   copy.deepcopy( grounding.ground_actions())
+    #     fluents                 =   copy.deepcopy( grounding.ground_state_variables())
+    #     del grounding
+    #     count_params = 0
+    #     for x, y in reachable_action_params.items() :
+    #         count_params += 1
 
             
-    print("#ground actions:", count_params)
+    # print("#ground actions:", count_params)
 
     return 1
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#
